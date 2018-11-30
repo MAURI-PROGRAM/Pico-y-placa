@@ -32,6 +32,4 @@ class canroadTestCase(unittest.TestCase):
         self.assertEqual(car1.canbeontheRoad(),False)
     
 if __name__=='__main__':
-    unittest.main()
-
-        
+    unittest.main()     
