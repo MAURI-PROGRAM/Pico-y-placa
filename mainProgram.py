@@ -48,6 +48,20 @@ while True:
     if(validationPlate):
         break
 
+#create new object
+newCar = Car(licPlatenum,date_str,time_str)
+can = newCar.canbeontheRoad()
+if can:
+    mensaje = str(can)+'\n'+'Your car whit license plate number: '+ licPlatenum.upper() +' can be on the road'\
+    ' on the day: '+ date_str + ' at: '+time_str
+else:
+    mensaje = str(can)+'\n'+'Your car whit license plate number: '+ licPlatenum.upper() +' can\'t be on the road'\
+    ' on the day: '+ date_str + ' at: '+time_str
+print('----------------------------------------------------------------------'*2)
+print(mensaje)
+print('----------------------------------------------------------------------'*2)
+
+
 
 
 

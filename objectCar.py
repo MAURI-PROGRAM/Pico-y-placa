@@ -2,6 +2,7 @@ from datetime import datetime,time
 import re
 
 class Car:
+    """object car for the rule 'pico y placa' """
     __mornMinhour = time(7)
     __mornMaxhour = time(9,30)
     __afternMinhour = time(16)
@@ -13,6 +14,31 @@ class Car:
         self.plateAtrib = plate_str
 
     def canbeontheRoad(self):
+        """Evaluate if a car may or may not be on the road 
+        
+        Returns True if it meets the conditions to be on the road, 
+        otherwise, returns False, if the attributes are incorrect, returns None.
+        
+        attributes
+        date -- In the format aaaa-mm-dd
+        time -- In the format hh:mm:ss
+        plate -- In the format XXX-###[#]
+
+        The attributes are defined in the constructor of the class.
+
+        Rule "pico y placa":
+        -Restriction schedule that aply "pico y placa": 
+            in the morning  beteween 7:00 and 9:30
+            in the afternoon beteween 16:00 and 19:30
+        -Days and last license plate number:
+            Monday      :   1,2
+            Tuesday     :   3,4
+            Wednesday   :   5,6
+            Thursday    :   7,8
+            Friday      :   9,0
+            The weekends do not apply
+        
+        """
 
         #filter per day of the week
         #the day of the week are Monday=1, Tuesday=2 .... Sunday=7 for this program
